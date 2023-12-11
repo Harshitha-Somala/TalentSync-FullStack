@@ -3,7 +3,7 @@ Integrates with PostgreSQL database and fetches Job listings
 
 ## Prerequisites
 - Follow the link below for the SQL setup to create data tables in database before working with API
-- DDL and DML commands are written in SQL_setup folder under  ```ddl.sql`` and ```dml.sql``` files respectively.
+- DDL and DML commands are written in SQL_setup folder under  ```ddl.sql``` and ```dml.sql``` files respectively.
 https://github.com/Harshitha-Somala/TalentSync-FullStack/blob/main/SQL_setup/setup_instructions.md
 
 ## How to run the API
