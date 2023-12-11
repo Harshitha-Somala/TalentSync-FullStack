@@ -1,4 +1,4 @@
-I used https://customer.elephantsql.com/login as a virtual db provider host. 
-Requested a postgres instance with max size 20.
-I ran all the queries by connecting to this database.
-Once connected, run ddl scripts first then dml scripts.
+- I used https://customer.elephantsql.com/login as a virtual db provider host. 
+- Requested a postgres instance with max size 20.
+- I ran all the queries by connecting to this database.
+- Once connected, run ddl scripts first then dml scripts.
