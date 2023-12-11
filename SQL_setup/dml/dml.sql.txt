@@ -1,0 +1,40 @@
+INSERT INTO talentsync.company (name, industry, location, description, founded_at, website, contact_email)
+VALUES 
+  ('Apple', 'Technology', 'San Francisco', 'Apple products', '2000-01-01', 'www.apple.com', 'info@apple.com'),
+  ('Google', 'Software', 'New York', 'Google software solutions', '1998-05-15', 'www.google.com', 'info@google.com'),
+  ('Delloite', 'Consulting', 'London', 'Delloite global consulting services', '1995-08-20', 'www.delloite.com', 'careers@delloite.com');
+
+-- Insert data into the employee table
+INSERT INTO talentsync.user (name, position, email, phone_number, hire_start_date )
+VALUES 
+  ('Mike king', 'Software Engineer', 'mike.king@gmail.com', '123-456-7890', '2022-01-15'),
+  ('Stephen joe', 'Recreuite', 'stephen.joe@gmail.com', '987-654-3210', '2021-03-10'),
+  ('Brent jim', 'Data Scientist', 'brent.jim@yahoo.com', '555-123-4567', '2023-05-20');
+
+-- Insert data into the job table
+INSERT INTO talentsync.job (title, description, company_id, location, posted_at, salary, job_type)
+VALUES 
+  ('Software Developer', 'Backend Engineer for Python', (select id from talentsync.company where name = 'Google'), 'San Francisco', '2023-01-20', 90000, 'full-time'),
+  ('HR Coordinator', 'Super fun HR activities', (select id from talentsync.company where name = 'Apple'), 'New York', '2023-02-01', 60000, 'part-time'),
+  ('Data Analyst', 'Analyzing complex data sets', (select id from talentsync.company where name = 'Google') , 'London', '2023-03-15', 80000, 'full-time');
+  
+-- Insert data into the job_application table
+  INSERT INTO talentsync.job_application (job_id, user_id, application_date, resume_file_path, cover_letter, status)
+VALUES 
+  (8, 4, '2023-05-20', 'dropbox/resumes/mike_resume.pdf', 'I am Perfect fit.', 'pending'),
+  (8, 5, '2023-05-20', 'dropbox/resumes/joe_resume.pdf', 'Awesome oppurtunity review my resume to learn more.', 'pending'),
+  (9, 5, '2023-05-20', 'dropbox/resumes/joe_resume.pdf', 'Looking forward.', 'pending');
+  
+  -- Insert data into the feedback table
+INSERT INTO talentsync.feedback (feedback_type, message, created_at, job_id, user_id, employer_id, rating)
+VALUES 
+  ('job_seeker', 'Great platform! Found my dream job here.', '2023-05-20', 8, null, 4, 3),
+  ('employer', 'Excellent candidates from TalentSync.', '2023-05-20', 8, 5, null, 4),
+  ('job_seeker', 'Need more job listings in the healthcare sector.', '2023-05-20', 8, 6, null, 5);
+ 
+  -- Insert data into the employer table
+INSERT INTO talentsync.employer (company_id, username, password, email, full_name, last_login)
+VALUES 
+  (7, 'techemployer', 'hashedpassword123', 'tech.employer@example.com', 'Tech Employer', '2023-01-10'),
+  (8, 'softemployer', 'hashedpassword456', 'soft.employer@example.com', 'Software Employer', '2023-02-05'),
+  (7, 'consultemployer', 'hashedpassword789', 'consult.employer@example.com', 'Consulting Employer', '2023-03-20');
